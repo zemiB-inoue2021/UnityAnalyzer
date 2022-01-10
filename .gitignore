@@ -1,6 +1,14 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
+<<<<<<< Updated upstream
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+=======
+<<<<<<< HEAD
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+=======
+# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+>>>>>>> 7185f7bf7a1e3191f0d5637d32a4291fc5411516
+>>>>>>> Stashed changes
 #
 /[Ll]ibrary/
 /[Tt]emp/
@@ -14,8 +22,18 @@
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
+<<<<<<< Updated upstream
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
+=======
+<<<<<<< HEAD
+# Recordings can get excessive in size
+/[Rr]ecordings/
+=======
+# Asset meta data should only be ignored when the corresponding asset is also ignored
+!/[Aa]ssets/**/*.meta
+>>>>>>> 7185f7bf7a1e3191f0d5637d32a4291fc5411516
+>>>>>>> Stashed changes
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -59,6 +77,13 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+*.app
+=======
+>>>>>>> 7185f7bf7a1e3191f0d5637d32a4291fc5411516
+>>>>>>> Stashed changes
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -68,4 +93,12 @@ crashlytics-build.properties
 
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
+<<<<<<< Updated upstream
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+=======
+<<<<<<< HEAD
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+=======
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+>>>>>>> 7185f7bf7a1e3191f0d5637d32a4291fc5411516
+>>>>>>> Stashed changes
