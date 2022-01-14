@@ -1,0 +1,47 @@
+{
+  "packages": [
+    {
+      "name": null,
+      "classes": [
+        {
+          "name": "Main",
+          "methods": [
+            {
+              "name": "main",
+              "params": [{ "name": "args", "type": "String[]" }],
+              "returnType": "void",
+              "loc": 51,
+              "cyclo": 10
+            },
+            {
+              "name": "printUsage",
+              "params": [],
+              "returnType": "void",
+              "loc": 9,
+              "cyclo": 0
+            },
+            {
+              "name": "getBaseName",
+              "params": [{ "name": "name", "type": "String" }],
+              "returnType": "String",
+              "loc": 8,
+              "cyclo": 1
+            },
+            {
+              "name": "shiftArray",
+              "params": [
+                { "name": "args", "type": "String[]" },
+                { "name": "n", "type": "int" }
+              ],
+              "returnType": "String[]",
+              "loc": 7,
+              "cyclo": 1
+            }
+          ]
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    }
+  ]
+}
