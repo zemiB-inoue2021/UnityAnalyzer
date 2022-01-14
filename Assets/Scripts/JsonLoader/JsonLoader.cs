@@ -1,9 +1,6 @@
-using Assets.Scripts.JsonLoader;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.Text.Json;
 using System.IO;
+using Assets.Scripts.JsonLoader.Data;
 
 public class JsonLoader
 {
