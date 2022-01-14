@@ -12,15 +12,17 @@ public class JsonLoader
     /// <returns>解析データ</returns>
     public static AnalysisData Load(string path)
     {
+        // TODO ファイルの存在チェック・エラー処理
+
         // JSONの内容を読み取り
-        // TODO ファイルの存在確認・エラー処理
-        var json = File.ReadAllText(path);
+        using (var stream = File.OpenRead(path)) {
 
-        // JSONをデシリアライズ
-        var data = JsonSerializer.Deserialize<AnalysisData>(json);
+            // JSONをデシリアライズ
+            var data = JsonSerializer.Deserialize<AnalysisData>(stream);
 
-        // 解析データを返す
-        return data;
+            // 解析データを返す
+            return data;
+        }
     }
     #endregion
 }
