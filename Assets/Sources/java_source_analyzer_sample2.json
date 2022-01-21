@@ -1,0 +1,587 @@
+{
+  "packages": [
+    { "name": null, "classes": [], "interfaces": [], "enums": [] },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "ClassorInterface",
+          "methods": [
+            {
+              "name": "getName",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "String"
+            },
+            {
+              "name": "setName",
+              "params": [{ "name": "name", "type": "String" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [{ "name": "Constructor", "methods": [], "constructors": [] }],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "Enum",
+          "methods": [
+            {
+              "name": "getName",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "String"
+            },
+            {
+              "name": "setName",
+              "params": [{ "name": "name", "type": "String" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getValues",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<String>"
+            },
+            {
+              "name": "setValues",
+              "params": [{ "name": "values", "type": "List<String>" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addValue",
+              "params": [{ "name": "value", "type": "String" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "Main",
+          "methods": [
+            {
+              "name": "main",
+              "params": [{ "name": "args", "type": "String[]" }],
+              "loc": 44,
+              "cyclo": 1,
+              "returnType": "void"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "Method",
+          "methods": [
+            {
+              "name": "getReturnType",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "String"
+            },
+            {
+              "name": "setReturnType",
+              "params": [{ "name": "returnType", "type": "String" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "MethodedNode",
+          "methods": [
+            {
+              "name": "getMethods",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<Method>"
+            },
+            {
+              "name": "setMethods",
+              "params": [{ "name": "methods", "type": "List<Method>" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addMethod",
+              "params": [{ "name": "method", "type": "Method" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getConstructors",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<Constructor>"
+            },
+            {
+              "name": "setConstructors",
+              "params": [
+                { "name": "constructors", "type": "List<Constructor>" }
+              ],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addConstructor",
+              "params": [{ "name": "constructor", "type": "Constructor" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "MethodOrConstructor",
+          "methods": [
+            {
+              "name": "getName",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "String"
+            },
+            {
+              "name": "setName",
+              "params": [{ "name": "name", "type": "String" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getParams",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<Param>"
+            },
+            {
+              "name": "setParams",
+              "params": [{ "name": "params", "type": "List<Param>" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addParam",
+              "params": [{ "name": "param", "type": "Param" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getLoc",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "int"
+            },
+            {
+              "name": "setLoc",
+              "params": [{ "name": "loc", "type": "int" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getCyclo",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "int"
+            },
+            {
+              "name": "setCyclo",
+              "params": [{ "name": "cyclo", "type": "int" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "incCyclo",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "NamedNode",
+          "methods": [
+            {
+              "name": "getName",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "String"
+            },
+            {
+              "name": "setName",
+              "params": [{ "name": "name", "type": "String" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "Package",
+          "methods": [
+            {
+              "name": "getClasses",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<ClassorInterface>"
+            },
+            {
+              "name": "setClasses",
+              "params": [
+                { "name": "classes", "type": "List<ClassorInterface>" }
+              ],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addClass",
+              "params": [{ "name": "c", "type": "ClassorInterface" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getInterfaces",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<ClassorInterface>"
+            },
+            {
+              "name": "setInterfaces",
+              "params": [
+                { "name": "interfaces", "type": "List<ClassorInterface>" }
+              ],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addInterface",
+              "params": [{ "name": "i", "type": "ClassorInterface" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getEnums",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<Enum>"
+            },
+            {
+              "name": "setEnums",
+              "params": [{ "name": "enums", "type": "List<Enum>" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addEnum",
+              "params": [{ "name": "e", "type": "Enum" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": [
+            { "name": "Package", "params": [], "loc": 3, "cyclo": 0 },
+            {
+              "name": "Package",
+              "params": [{ "name": "name", "type": "String" }],
+			  "loc": 3,
+              "cyclo": 0
+            }
+          ]
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "Param",
+          "methods": [
+            {
+              "name": "getType",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "String"
+            },
+            {
+              "name": "setType",
+              "params": [{ "name": "type", "type": "String" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            }
+          ],
+          "constructors": [
+            {
+              "name": "Param",
+              "params": [
+                { "name": "name", "type": "String" },
+                { "name": "type", "type": "String" }
+              ],
+              "loc": 4,
+              "cyclo": 0
+            }
+          ]
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "ParseData",
+          "methods": [
+            {
+              "name": "getPackages",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<Package>"
+            },
+            {
+              "name": "setPackages",
+              "params": [{ "name": "packages", "type": "List<Package>" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "addPackage",
+              "params": [{ "name": "p", "type": "Package" }],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getPackage",
+              "params": [{ "name": "s", "type": "String" }],
+              "loc": 10,
+              "cyclo": 1,
+              "returnType": "Package"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    },
+    {
+      "name": "zemib.inoue.javasourceanalyzer",
+      "classes": [
+        {
+          "name": "ZemiBVoidVisitor",
+          "methods": [
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "PackageDeclaration" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 5,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "ClassOrInterfaceDeclaration" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 12,
+              "cyclo": 1,
+              "returnType": "void"
+            },
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "MethodDeclaration" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 15,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "EnumDeclaration" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 9,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "IfStmt" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 7,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "WhileStmt" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 7,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "ForStmt" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 7,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "visit",
+              "params": [
+                { "name": "n", "type": "ConstructorDeclaration" },
+                { "name": "arg", "type": "String" }
+              ],
+              "loc": 14,
+              "cyclo": 0,
+              "returnType": "void"
+            },
+            {
+              "name": "getClasses",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<ClassorInterface>"
+            },
+            {
+              "name": "getInterfaces",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<ClassorInterface>"
+            },
+            {
+              "name": "getEnums",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "List<Enum>"
+            },
+            {
+              "name": "getPackage",
+              "params": [],
+              "loc": 3,
+              "cyclo": 0,
+              "returnType": "String"
+            }
+          ],
+          "constructors": []
+        }
+      ],
+      "interfaces": [],
+      "enums": []
+    }
+  ]
+}

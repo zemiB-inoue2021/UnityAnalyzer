@@ -21,7 +21,7 @@ public class CreateBuildings : MonoBehaviour
 
     void Start()
     {
-        d = JsonLoader.Load("Assets/Sources/java_source_analyzer_sample.json");
+        d = JsonLoader.Load("Assets/Sources/java_source_analyzer_sample2.json");
     }
 
     // Update is called once per frame
@@ -36,8 +36,18 @@ public class CreateBuildings : MonoBehaviour
                 CreateCube(p, pacnum);
                 foreach (ClassOrInterface c in p.Classes)
                 {
-                    CreateCube(c, pacnum, clsnum,true);
-                    int mtdnum = 0;
+                    CreateCube(c, pacnum, clsnum, true);
+                    int mtdnum = 0, connum = 0;
+                    foreach (Constructor constructor in c.Constructors) {
+                        int paranum = 0;
+                        CreateCube(constructor, pacnum, clsnum, connum);
+                        foreach (Param param in constructor.Params)
+                        {
+                            CreateSphere(param, pacnum, clsnum, connum, paranum, constructor.LOC);
+                            paranum++;
+                        }
+                        connum++;
+                    }
                     foreach (Method m in c.Methods)
                     {
                         int paranum = 0;
@@ -54,7 +64,18 @@ public class CreateBuildings : MonoBehaviour
                 foreach (ClassOrInterface i in p.Interfaces)
                 {
                     CreateCube(i, pacnum, internum,false);
-                    int mtdnum = 0;
+                    int mtdnum = 0, connum = 0;
+                    foreach (Constructor constructor in i.Constructors)
+                    {
+                        int paranum = 0;
+                        CreateCube(constructor, pacnum, internum + clsnum, connum);
+                        foreach (Param param in constructor.Params)
+                        {
+                            CreateSphere(param, pacnum, internum, connum, paranum, constructor.LOC);
+                            paranum++;
+                        }
+                        connum++;
+                    }
                     foreach (Method m in i.Methods)
                     {
                         int paranum = 0;
@@ -71,8 +92,19 @@ public class CreateBuildings : MonoBehaviour
 
                 foreach (Enum e in p.Enums)
                 {
-                    CreateCube(e, pacnum,enumnum, false);
-                    int mtdnum = 0;
+                    CreateCube(e, pacnum,enumnum);
+                    int mtdnum = 0, connum = 0, valnum = 0;
+                    foreach (Constructor constructor in e.Constructors)
+                    {
+                        int paranum = 0;
+                        CreateCube(constructor, pacnum, clsnum + internum + enumnum, connum);
+                        foreach (Param param in constructor.Params)
+                        {
+                            CreateSphere(param, pacnum, enumnum, connum, paranum, constructor.LOC);
+                            paranum++;
+                        }
+                        connum++;
+                    }
                     foreach (Method m in e.Methods)
                     {
                         int paranum = 0;
@@ -83,6 +115,10 @@ public class CreateBuildings : MonoBehaviour
                             paranum++;
                         }
                         mtdnum++;
+                    }
+                    foreach (string val in e.Values) {
+                        CreateCube(val, pacnum, clsnum + internum + enumnum, valnum);
+                        valnum++;
                     }
                     enumnum++;
                 }
@@ -107,19 +143,19 @@ public class CreateBuildings : MonoBehaviour
         {
             float darkness = (isClass? 0.5f : 0.7f);
             GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            newCube.transform.position = new Vector3(offset * 110+(number % 3) * 30, 1, (number/3) * 30);
+            newCube.transform.position = new Vector3(offset * 110+(number % 3) * 30 + 12, 1, (number/3) * 30);
             newCube.transform.localScale += new Vector3(29, 0, 29);
             newCube.GetComponent<Renderer>().material.color = new Color(darkness, darkness, darkness);
             newCube.name = c.Name;
         }
     }
 
-    private void CreateCube(Enum e, int offset, int number, bool isClass)
+    private void CreateCube(Enum e, int offset, int number)
     {
         {
             float darkness = 0.3f;
             GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            newCube.transform.position = new Vector3(offset * 110 + (number % 3) * 30, 1, (number / 3) * 30);
+            newCube.transform.position = new Vector3(offset * 110 + (number % 3) * 30 + 12, 1, (number / 3) * 30);
             newCube.transform.localScale += new Vector3(29, 0, 29);
             newCube.GetComponent<Renderer>().material.color = new Color(darkness, darkness, darkness);
             newCube.name = e.Name;
@@ -140,6 +176,17 @@ public class CreateBuildings : MonoBehaviour
         }
     }
 
+    private void CreateCube(Constructor constructor, int offset1, int offset2, int number)
+    {
+        {
+            GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            newCube.transform.position = new Vector3(offset1 * 110 + (offset2 % 3) * 30 + (number % 10) * 3, 2 + 0.05f * constructor.LOC, (offset2 / 3) * 30 + (number / 10) * 3 + 5);
+            newCube.transform.localScale += new Vector3(1 + constructor.CyclomaticComplexity * 0.1f, 0.1f * constructor.LOC, 1 + constructor.Params.Length * 1.0f);
+            newCube.GetComponent<Renderer>().material.color = new Color(1.0f,0.2f,1.0f);
+            newCube.name = "Constructor " + (number + 1).ToString();
+        }
+    }
+
     private void CreateSphere(Param param, int offset1, int offset2, int offset3, int number, int parentLOC)
     {
         {
@@ -151,6 +198,17 @@ public class CreateBuildings : MonoBehaviour
             newSphere.transform.localScale += new Vector3(0,0,0);
             newSphere.GetComponent<Renderer>().material.color = color;
             newSphere.name = param.Name;
+        }
+    }
+
+    private void CreateCube(string value, int offset1, int offset2, int number)
+    {
+        {
+            GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            newCube.transform.position = new Vector3(offset1 * 110 + (offset2 % 3) * 30 + (number % 10) * 3, 2, (offset2 / 3) * 30 + (number / 10) * 3 - 5);
+            newCube.transform.localScale += new Vector3(0, 0, 0);
+            newCube.GetComponent<Renderer>().material.color = new Color(0.3f,1.0f,0.3f);
+            newCube.name = value;
         }
     }
 
@@ -177,11 +235,11 @@ public class CreateBuildings : MonoBehaviour
                 break;
             case "String[]":
             case "List<String>":
-                color = new Color(1.0f, 0.5f, 0.5f);
+                color = new Color(0.5f, 1.0f, 0.5f);
                 break;
             case "boolean[]":
             case "List<boolean>":
-                color = new Color(1.0f, 0.5f, 0.5f);
+                color = new Color(0.5f, 0.5f, 1.0f);
                 break;
             default:
                 color = new Color(1.0f, 1.0f, 1.0f);
