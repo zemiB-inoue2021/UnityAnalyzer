@@ -3,27 +3,15 @@
 namespace Assets.Scripts.JsonLoader.Data
 {
     /// <summary>
-    /// メソッドの情報
+    /// コンストラクタ情報
     /// </summary>
-    public class Method
+    public class Constructor
     {
-        /// <summary>
-        /// メソッド名
-        /// </summary>
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
-
         /// <summary>
         /// パラメーターのリスト
         /// </summary>
         [JsonPropertyName("params")]
         public Param[] Params { get; set; }
-
-        /// <summary>
-        /// 戻り値の型
-        /// </summary>
-        [JsonPropertyName("returnType")]
-        public string ReturnType { get; set; }
 
         /// <summary>
         /// LOC

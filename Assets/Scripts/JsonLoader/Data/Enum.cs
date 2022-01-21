@@ -14,6 +14,12 @@ namespace Assets.Scripts.JsonLoader.Data
         public string Name { get; set; }
 
         /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        [JsonPropertyName("constructors")]
+        public Constructor[] Constructors { get; set; }
+
+        /// <summary>
         /// メソッド
         /// </summary>
         [JsonPropertyName("methods")]
