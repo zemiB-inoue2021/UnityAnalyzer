@@ -1,62 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class MoveCamerawithArrowKey : MonoBehaviour
 {
-    public float accel = 1.0f;
-    /*
-     * 一応仮のJSON形式で読み込み処理を書いたので，
-     * 適当にファイルを作ってテストしてみようと思っています
-     */
-    public GameObject mainCamera ;
+    /// <summary>
+    /// カメラの移動速度
+    /// </summary>
+    [Obsolete][SerializeField] private float _accel = 1.0f;
+
+    /// <summary>
+    /// 操作対象カメラ
+    /// </summary>
+    [SerializeField] private GameObject _mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
-        mainCamera = GameObject.Find("Main Camera");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
-        {
-            if (accel < 2.0f) accel += 0.00625f;
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-                {
-                    mainCamera.transform.Translate(0, -0.1f, 0);
+        if (Input.anyKey) {
+            if (_accel < 2.0f) _accel += 0.00625f;
+            if (Input.GetKey(KeyCode.DownArrow)) {
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
+                    _mainCamera.transform.Translate(0, -0.1f, 0);
                 }
-                else
-                {
-                    mainCamera.transform.Translate(0, 0, -0.1f);
+                else {
+                    _mainCamera.transform.Translate(0, 0, -0.1f);
                 }
             }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-                {
-                    mainCamera.transform.Translate(0, 0.1f, 0);
+            if (Input.GetKey(KeyCode.UpArrow)) {
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
+                    _mainCamera.transform.Translate(0, 0.1f, 0);
                 }
-                else
-                {
-                    mainCamera.transform.Translate(0, 0, 0.1f);
+                else {
+                    _mainCamera.transform.Translate(0, 0, 0.1f);
                 }
             }
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                mainCamera.transform.Translate(-0.1f, 0, 0);
+            if (Input.GetKey(KeyCode.LeftArrow)) {
+                _mainCamera.transform.Translate(-0.1f, 0, 0);
             }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                mainCamera.transform.Translate(0.1f, 0, 0);
+            if (Input.GetKey(KeyCode.RightArrow)) {
+                _mainCamera.transform.Translate(0.1f, 0, 0);
             }
         }
         else {
-            if (accel > 1.01f) accel -= 0.02f;
-            else accel = 1.0f;
+            if (_accel > 1.01f) _accel -= 0.02f;
+            else _accel = 1.0f;
         }
-        
+
     }
 }
