@@ -117,7 +117,7 @@ public class CreateBuildings : MonoBehaviour
     private void CreateCube(Enum e, int offset, int number, bool isClass)
     {
         {
-            float darkness = (isClass ? 0.5f : 0.7f);
+            float darkness = 0.3f;
             GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             newCube.transform.position = new Vector3(offset * 110 + (number % 3) * 30, 1, (number / 3) * 30);
             newCube.transform.localScale += new Vector3(29, 0, 29);
@@ -133,7 +133,7 @@ public class CreateBuildings : MonoBehaviour
             Color color;
             color = SetColor(typestr);
             GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            newCube.transform.position = new Vector3(offset1*110+ (offset2 % 3) * 30+(number % 10) * 3, 2, (offset2 / 3) * 30+(number / 10) * 3);
+            newCube.transform.position = new Vector3(offset1*110+ (offset2 % 3) * 30+(number % 10) * 3, 2 + 0.05f * method.LOC, (offset2 / 3) * 30+(number / 10) * 3);
             newCube.transform.localScale += new Vector3(1+method.CyclomaticComplexity * 0.1f, 0.1f * method.LOC, 1+method.Params.Length * 1.0f);
             newCube.GetComponent<Renderer>().material.color = color;
             newCube.name = method.Name;
