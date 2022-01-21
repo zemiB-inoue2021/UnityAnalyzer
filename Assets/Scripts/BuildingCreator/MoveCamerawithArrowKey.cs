@@ -24,11 +24,25 @@ public class MoveCamerawithArrowKey : MonoBehaviour
             if (accel < 2.0f) accel += 0.00625f;
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                mainCamera.transform.Translate(0, 0, -0.1f);
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                {
+                    mainCamera.transform.Translate(0, -0.1f, 0);
+                }
+                else
+                {
+                    mainCamera.transform.Translate(0, 0, -0.1f);
+                }
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                mainCamera.transform.Translate(0, 0, 0.1f);
+                if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+                {
+                    mainCamera.transform.Translate(0, 0.1f, 0);
+                }
+                else
+                {
+                    mainCamera.transform.Translate(0, 0, 0.1f);
+                }
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
