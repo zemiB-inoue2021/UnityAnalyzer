@@ -13,6 +13,11 @@ public class MoveCamerawithArrowKey : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject _mainCamera;
 
+    /// <summary>
+    /// äpìxèÓïÒ
+    /// </summary>
+    [SerializeField] private float x = 15f,y = 0,z = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +29,7 @@ public class MoveCamerawithArrowKey : MonoBehaviour
     {
         if (Input.anyKey) {
             if (_accel < 2.0f) _accel += 0.00625f;
-            if (Input.GetKey(KeyCode.DownArrow)) {
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
                 if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
                     _mainCamera.transform.Translate(0, -0.1f, 0);
                 }
@@ -32,7 +37,7 @@ public class MoveCamerawithArrowKey : MonoBehaviour
                     _mainCamera.transform.Translate(0, 0, -0.1f);
                 }
             }
-            if (Input.GetKey(KeyCode.UpArrow)) {
+            if (Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.W)) {
                 if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
                     _mainCamera.transform.Translate(0, 0.1f, 0);
                 }
@@ -40,11 +45,35 @@ public class MoveCamerawithArrowKey : MonoBehaviour
                     _mainCamera.transform.Translate(0, 0, 0.1f);
                 }
             }
-            if (Input.GetKey(KeyCode.LeftArrow)) {
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
                 _mainCamera.transform.Translate(-0.1f, 0, 0);
             }
-            if (Input.GetKey(KeyCode.RightArrow)) {
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
                 _mainCamera.transform.Translate(0.1f, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.K))
+            {
+                _mainCamera.transform.rotation = Quaternion.Euler(--x, y, z);
+            }
+            if (Input.GetKey(KeyCode.I))
+            {
+                _mainCamera.transform.rotation = Quaternion.Euler(++x, y, z);
+            }
+            if (Input.GetKey(KeyCode.J))
+            {
+                _mainCamera.transform.rotation = Quaternion.Euler(x, --y, z);
+            }
+            if (Input.GetKey(KeyCode.L))
+            {
+                _mainCamera.transform.rotation = Quaternion.Euler(x, ++y, z);
+            }
+            if (Input.GetKey(KeyCode.U))
+            {
+                _mainCamera.transform.rotation = Quaternion.Euler(x, y, --z);
+            }
+            if (Input.GetKey(KeyCode.O))
+            {
+                _mainCamera.transform.rotation = Quaternion.Euler(x, y, ++z);
             }
         }
         else {
